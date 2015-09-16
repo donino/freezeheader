@@ -34,7 +34,7 @@ Version: 1.0.7
                     scroller: null,
                	    normalizeHeader:true,   // BIRT engine generates headers inside tbody...
                     widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
-                    headerStyle:"background-color:white;opacity:0.9"
+                    headerStyle:"background-color:#4E4D4D;opacity:0.9"
                 };
 		if (params){
 			$.extend(obj,params,true);	
