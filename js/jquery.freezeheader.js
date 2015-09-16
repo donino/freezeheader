@@ -34,7 +34,7 @@ Version: 1.0.7
                     scroller: null,
                	    normalizeHeader:true,   // Sometimes tables are generated without thead tag
                     widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
-                    headerStyle:"background-color:#4E4D4D;opacity:0.9", //Style added to the cloned header
+                    headerStyle:"background-color:#4E4D4D;opacity:0.9;", //Style added to the cloned header
                     minHeightWindow:600  //don't freeze if height is smaller than this
                 };
                 
@@ -121,7 +121,7 @@ Version: 1.0.7
                     tabela.attr(this.name, this.value);
                 }
             });
-	    cloneHead.attr("style", cloneHead.attr("style")+obj.headerStyle);	
+	    cloneHead.attr("style", obj.headerStyle+cloneHead.attr("style"));	
             tabela.append(cloneHead);
 
             obj.container.append(tabela);
@@ -162,6 +162,7 @@ Version: 1.0.7
         return this.each(function (i, e) {
             freezeHeader($(e));
              $( window ).resize(function() {
+             	params.normalizeHeader=false;
   		freezeHeader($(e));
 	     });
         });
