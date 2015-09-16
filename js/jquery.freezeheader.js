@@ -163,6 +163,7 @@ Version: 1.0.7
             freezeHeader($(e));
              $( window ).resize(function() {
              	params.normalizeHeader=false;
+             	copiedHeader = false;
   		freezeHeader($(e));
 	     });
         });
