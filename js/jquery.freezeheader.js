@@ -121,7 +121,7 @@ Version: 1.0.7
                     tabela.attr(this.name, this.value);
                 }
             });
-	    cloneHead.attr("style", obj.headerStyle);	
+	    cloneHead.attr("style", cloneHead.attr("style")+obj.headerStyle);	
             tabela.append(cloneHead);
 
             obj.container.append(tabela);
