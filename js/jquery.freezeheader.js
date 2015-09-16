@@ -102,7 +102,10 @@ Version: 1.0.7
 		        $( window ).resize(function() {
 		             	params.normalizeHeader=false;
 		             	copiedHeader = false;
-		             	obj.container.remove();
+		             	if (obj.container){
+		             		obj.container.remove();	
+		             	}
+		             	
 			});
         	}
         }
