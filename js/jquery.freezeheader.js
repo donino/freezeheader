@@ -35,16 +35,15 @@ Version: 1.0.7
                	    normalizeHeader:true,   // Sometimes tables are generated without thead tag
                     widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
                     headerStyle:"background-color:#4E4D4D;opacity:0.9", //Style added to the cloned header
-                    minHeightWindow:600  //don't freesee if height is smaller than this
+                    minHeightWindow:600  //don't freeze if height is smaller than this
                 };
                 
-                if ($(document).height()<minHeightWindow:600){
-                   return;
-                }
 		if (params){
 			$.extend(obj,params,true);	
 		}
-                
+                if ($(document).height()<minHeightWindow<obj.minHeightWindow){
+                   return;
+                }                
 		if (obj.normalizeHeader){
 			normalizeHeader(obj);
 		}
