@@ -41,7 +41,7 @@ Version: 1.0.7
 		if (params){
 			$.extend(obj,params,true);	
 		}
-                if ($(document).height()<minHeightWindow<obj.minHeightWindow){
+                if ($(document).height()<obj.minHeightWindow){
                    return;
                 }                
 		if (obj.normalizeHeader){
