@@ -14,7 +14,12 @@ Version: 1.0.7
     $.fn.freezeHeader = function (params) {
 
         var copiedHeader = false;
-
+	function normalizeHeader(elem){
+		var id="#"+elem.attr('id');
+		$vui(id+" tbody tr").first().wrap("<thead/>");
+		$vui(id+" tbody thead").prependTo(id);
+		//$vui("#pDfMJ0R7W3NHR____bookmark_1").freezeHeader();		
+	}
         function freezeHeader(elem) {
             var idObj = elem.attr('id') || ('tbl-' + (++TABLE_ID));
             if (elem.length > 0 && elem[0].tagName.toLowerCase() == "table") {
@@ -27,8 +32,17 @@ Version: 1.0.7
                     divScroll: null,
                     openDivScroll: null,
                     closeDivScroll: null,
-                    scroller: null
+                    scroller: null,
+               	    normalizeHeader:true,   // BIRT engine generates headers inside tbody...
+                    widthRatio:100 // Table width if expressed in percent. Set it to 95 if width is 95%                    
                 };
+		if (params){
+			$.extend(obj,params,true);	
+		}
+                
+		if (obj.normalizeHeader){
+			normalizeHeader(elem);
+		}
 
                 if (params && params.height !== undefined) {
                     obj.divScroll = '<div id="hdScroll' + obj.id + '" style="height: ' + params.height + '; overflow-y: scroll">';
@@ -107,7 +121,7 @@ Version: 1.0.7
             tabela.append('<thead>' + obj.header.html() + '</thead>');
 
             obj.container.append(tabela);
-            obj.container.width(obj.header.width());
+            obj.container.width(obj.header.width()/(obj.widthRatio/100));
             obj.container.height(obj.header.height);
             obj.container.find('th').each(function (index) {
                 var cellWidth = obj.grid.find('th').eq(index).width();
@@ -146,4 +160,4 @@ Version: 1.0.7
         });
 
     };
-})(jQuery);
+})($vui);
