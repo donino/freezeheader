@@ -35,7 +35,7 @@ Version: 1.0.7
                	    normalizeHeader:true,   // BIRT engine generates headers inside tbody...
                     widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
                     headerStyle:"background-color:#4E4D4D;opacity:0.9", //Style added to the cloned header
-                    minHeightWindow:600;  //don't freese if height is smaller than this
+                    minHeightWindow:600  //don't freese if height is smaller than this
                 };
                 
                 if ($(document).height()<minHeightWindow:600){
@@ -163,7 +163,7 @@ Version: 1.0.7
         return this.each(function (i, e) {
             freezeHeader($(e));
              $( window ).resize(function() {
-  		freezHeader($(e));
+  		freezeHeader($(e));
 	     });
         });
 
