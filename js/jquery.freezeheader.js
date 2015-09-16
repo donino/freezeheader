@@ -98,7 +98,13 @@ Version: 1.0.7
                     }
 
                 });
-            }
+                
+	        $( window ).resize(function() {
+	             	params.normalizeHeader=false;
+	             	copiedHeader = false;
+	             	console.log("Removing freezed head:"+'#hd' + obj.id);
+	             	$('#hd' + obj.id).remove();                
+	            }
         }
 
         function limiteAlcancado(obj, params) {
@@ -161,8 +167,8 @@ Version: 1.0.7
         $( window ).resize(function() {
              	params.normalizeHeader=false;
              	copiedHeader = false;
-             	console.log("Removing freezed head:"+'#hd' + $(this).attr('id'));
-             	$('#hd' + $(this).attr('id')).remove();
+             	console.log("Removing freezed container:"+obj.container.attr('id'));
+             	obj.container.remove();
 	});
         return this.each(function (i, e) {
             freezeHeader($(e));
