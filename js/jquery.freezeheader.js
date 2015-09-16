@@ -17,7 +17,7 @@ Version: 1.0.7
 	function normalizeHeader(elem){
 		var id="#"+elem.attr('id');
 		$vui(id+" tbody tr").first().wrap("<thead/>");
-		$vui(id+" tbody thead").prependTo(id);
+		$vui(id+" tbody thead").prependTo(id).attr("style", obj.headerStyle);
 		//$vui("#pDfMJ0R7W3NHR____bookmark_1").freezeHeader();		
 	}
         function freezeHeader(elem) {
@@ -34,7 +34,8 @@ Version: 1.0.7
                     closeDivScroll: null,
                     scroller: null,
                	    normalizeHeader:true,   // BIRT engine generates headers inside tbody...
-                    widthRatio:100 // Table width if expressed in percent. Set it to 95 if width is 95%                    
+                    widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
+                    headerStyle:"background-color:white;opacity:0.9"
                 };
 		if (params){
 			$.extend(obj,params,true);	
