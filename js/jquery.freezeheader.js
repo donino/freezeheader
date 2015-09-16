@@ -14,8 +14,8 @@ Version: 1.0.7
     $.fn.freezeHeader = function (params) {
 
         var copiedHeader = false;
-	function normalizeHeader(elem){
-		var id="#"+elem.attr('id');
+	function normalizeHeader(obj){
+		var id="#"+obj.id;
 		$vui(id+" tbody tr").first().wrap("<thead/>");
 		$vui(id+" tbody thead").prependTo(id).attr("style", obj.headerStyle);
 		//$vui("#pDfMJ0R7W3NHR____bookmark_1").freezeHeader();		
@@ -42,7 +42,7 @@ Version: 1.0.7
 		}
                 
 		if (obj.normalizeHeader){
-			normalizeHeader(elem);
+			normalizeHeader(obj);
 		}
 
                 if (params && params.height !== undefined) {
