@@ -32,7 +32,7 @@ Version: 1.0.7
                     openDivScroll: null,
                     closeDivScroll: null,
                     scroller: null,
-                    fromTop:4px,
+                    fromTop:"4px",
                	    normalizeHeader:true,   // Sometimes tables are generated without thead tag
                     widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
                     headerStyle:"background-color:#4E4D4D;opacity:0.9;", //Style added to the cloned header
