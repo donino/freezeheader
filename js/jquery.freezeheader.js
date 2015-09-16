@@ -32,10 +32,10 @@ Version: 1.0.7
                     openDivScroll: null,
                     closeDivScroll: null,
                     scroller: null,
-               	    normalizeHeader:true,   // BIRT engine generates headers inside tbody...
+               	    normalizeHeader:true,   // Sometimes tables are generated without thead tag
                     widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
                     headerStyle:"background-color:#4E4D4D;opacity:0.9", //Style added to the cloned header
-                    minHeightWindow:600  //don't freese if height is smaller than this
+                    minHeightWindow:600  //don't freesee if height is smaller than this
                 };
                 
                 if ($(document).height()<minHeightWindow:600){
