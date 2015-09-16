@@ -18,7 +18,6 @@ Version: 1.0.7
 		var id="#"+obj.id;
 		$vui(id+" tbody tr").first().wrap("<thead/>");
 		$vui(id+" tbody thead").prependTo(id).attr("style", obj.headerStyle);
-		//$vui("#pDfMJ0R7W3NHR____bookmark_1").freezeHeader();		
 	}
         function freezeHeader(elem) {
             var idObj = elem.attr('id') || ('tbl-' + (++TABLE_ID));
