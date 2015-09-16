@@ -85,8 +85,8 @@ Version: 1.0.7
                         else {
 
                             if (($(document).scrollTop() > obj.header.offset().top)) {
-                                obj.container.css("position", "absolute");
-                                obj.container.css("top", (obj.grid.find("tr:last").offset().top - obj.header.height()) + "px");
+                               // obj.container.css("position", "absolute");
+                               // obj.container.css("top", (obj.grid.find("tr:last").offset().top - obj.header.height()) + "px");
                             }
                             else {
                                 obj.container.css("visibility", "hidden");
