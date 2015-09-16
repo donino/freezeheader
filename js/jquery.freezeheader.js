@@ -17,7 +17,7 @@ Version: 1.0.7
 	function normalizeHeader(obj){
 		var id="#"+obj.id;
 		$vui(id+" tbody tr").first().wrap("<thead/>");
-		$vui(id+" tbody thead").prependTo(id).attr("style", obj.headerStyle);
+		$vui(id+" tbody thead").prependTo(id);
 	}
         function freezeHeader(elem) {
             var idObj = elem.attr('id') || ('tbl-' + (++TABLE_ID));
@@ -111,14 +111,14 @@ Version: 1.0.7
             obj.container.val('');
             var tabela = $('<table style="margin: 0 0;"></table>');
             var atributos = obj.grid.prop("attributes");
-
+	    var cloneHead=$('<thead>' + obj.header.html() + '</thead>');
             $.each(atributos, function () {
                 if (this.name != "id") {
                     tabela.attr(this.name, this.value);
                 }
             });
-
-            tabela.append('<thead>' + obj.header.html() + '</thead>');
+	    cloneHead.attr("style", obj.headerStyle);	
+            tabela.append(cloneHead);
 
             obj.container.append(tabela);
             obj.container.width(obj.header.width()/(obj.widthRatio/100));
