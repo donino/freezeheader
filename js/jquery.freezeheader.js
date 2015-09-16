@@ -158,14 +158,13 @@ Version: 1.0.7
                 obj.container.css("position", "fixed");
             }
         }
-
-        return this.each(function (i, e) {
-            freezeHeader($(e));
-             $( window ).resize(function() {
+        $( window ).resize(function() {
              	params.normalizeHeader=false;
              	copiedHeader = false;
              	$('#hd' + e.attr('id')).remove();
-	     });
+	});
+        return this.each(function (i, e) {
+            freezeHeader($(e));
         });
 
     };
