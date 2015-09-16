@@ -164,7 +164,7 @@ Version: 1.0.7
              $( window ).resize(function() {
              	params.normalizeHeader=false;
              	copiedHeader = false;
-  		freezeHeader($(e));
+             	$('#hd' + e.attr('id')).remove();
 	     });
         });
 
