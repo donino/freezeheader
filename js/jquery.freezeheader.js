@@ -18,9 +18,7 @@ Version: 1.0.7
 		var id="#"+obj.id,    
         head=$vui("<thead/>").prependTo(id);
         
-    $vui(id+" tbody tr").slice(0,obj.headerRows).appendTo(head);
-		//$vui(id+" tbody tr").first().wrap("<thead/>");
-		//$vui(id+" tbody thead").prependTo(id);
+    	$vui(id+" tbody tr").slice(0,obj.headerRows).appendTo(head);
 	}
         function freezeHeader(elem) {
             var idObj = elem.attr('id') || ('tbl-' + (++TABLE_ID));
@@ -78,7 +76,7 @@ Version: 1.0.7
                     }
 
                     obj.container = $('#hd' + obj.id);
-
+		    obj.container.attr("style", obj.headerStyle);
                     if (obj.header.offset() != null) {
                         if (limiteAlcancado(obj, params)) {
                             if (!copiedHeader) {
@@ -134,7 +132,6 @@ Version: 1.0.7
                     tabela.attr(this.name, this.value);
                 }
             });
-	    cloneHead.attr("style", obj.headerStyle+cloneHead.attr("style"));	
             tabela.append(cloneHead);
 
             obj.container.append(tabela);
