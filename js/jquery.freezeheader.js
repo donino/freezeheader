@@ -76,7 +76,7 @@ Version: 1.0.7
                     }
 
                     obj.container = $('#hd' + obj.id);
-		    obj.container.attr("style", obj.headerStyle);
+		    
                     if (obj.header.offset() != null) {
                         if (limiteAlcancado(obj, params)) {
                             if (!copiedHeader) {
@@ -127,6 +127,7 @@ Version: 1.0.7
             var tabela = $('<table style="margin: 0 0;"></table>');
             var atributos = obj.grid.prop("attributes");
 	    var cloneHead=$('<thead>' + obj.header.html() + '</thead>');
+	    obj.container.attr("style", obj.headerStyle);
             $.each(atributos, function () {
                 if (this.name != "id") {
                     tabela.attr(this.name, this.value);
