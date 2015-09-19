@@ -15,9 +15,12 @@ Version: 1.0.7
 
         var copiedHeader = false;
 	function normalizeHeader(obj){
-		var id="#"+obj.id;
-		$vui(id+" tbody tr").first().wrap("<thead/>");
-		$vui(id+" tbody thead").prependTo(id);
+		var id="#"+obj.id,    
+        head=$vui("<thead/>").prependTo(id);
+        
+    $vui(id+" tbody tr").slice(0,obj.headerRows).appendTo(head);
+		//$vui(id+" tbody tr").first().wrap("<thead/>");
+		//$vui(id+" tbody thead").prependTo(id);
 	}
         function freezeHeader(elem) {
             var idObj = elem.attr('id') || ('tbl-' + (++TABLE_ID));
@@ -33,6 +36,7 @@ Version: 1.0.7
                     closeDivScroll: null,
                     scroller: null,
                	    normalizeHeader:true,   // Sometimes tables are generated without thead tag
+                    headerRows:1, //number of header rows (if header should be normalized)
                     widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
                     headerStyle:"background-color:#4E4D4D;opacity:0.9;", //Style added to the cloned header
                     minHeightWindow:600  //don't freeze if height is smaller than this
