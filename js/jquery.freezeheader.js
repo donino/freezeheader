@@ -32,6 +32,7 @@ Version: 1.0.7
                     divScroll: null,
                     openDivScroll: null,
                     closeDivScroll: null,
+                    fromTop:"4px", //distance of the cloned header from top of the page
                     scroller: null,
                	    normalizeHeader:true,   // Sometimes tables are generated without thead tag
                     headerRows:1, //number of header rows (if header should be normalized)
@@ -165,7 +166,7 @@ Version: 1.0.7
 			    obj.container.css("top", params.offset);
                 obj.container.css("position", "fixed");
             } else {
-                obj.container.css("top", "4px");
+                obj.container.css("top", obj.fromTop);
                 obj.container.css("position", "fixed");
             }
         }
