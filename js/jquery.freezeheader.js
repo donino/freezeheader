@@ -36,7 +36,7 @@ Version: 1.0.7
                	    normalizeHeader:true,   // Sometimes tables are generated without thead tag
                     headerRows:1, //number of header rows (if header should be normalized)
                     widthRatio:100, // Table width if expressed in percent. Set it to 95 if width is 95%  
-                    headerStyle:"background-color:#4E4D4D;opacity:0.9;", //Style added to the cloned header
+                    headerStyle:"background-color:#4E4D4D;opacity:0.9", //Style added to the cloned header
                     minHeightWindow:600  //don't freeze if height is smaller than this
                 };
                 
@@ -126,8 +126,8 @@ Version: 1.0.7
             obj.container.val('');
             var tabela = $('<table style="margin: 0 0;"></table>');
             var atributos = obj.grid.prop("attributes");
-	    var cloneHead=$('<thead>' + obj.header.html() + '</thead>');
-	    obj.container.attr("style", obj.headerStyle);
+	    var cloneHead=$('<thead>' + obj.header.html()+ '</thead>');
+	    cloneHead.attr("style", obj.headerStyle+";"+cloneHead.attr("style"));
             $.each(atributos, function () {
                 if (this.name != "id") {
                     tabela.attr(this.name, this.value);
